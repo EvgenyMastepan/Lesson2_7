@@ -15,6 +15,10 @@
 		750291CE2D0701E200619C5B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750291CD2D0701E200619C5B /* ImageView.swift */; };
 		750291D12D07218200619C5B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750291D02D07218100619C5B /* ContentViewController.swift */; };
 		750291D32D0723EA00619C5B /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750291D22D0723EA00619C5B /* LabelView.swift */; };
+		750DA5E12D073F7E004EBE5E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750DA5E02D073F7E004EBE5E /* Extensions.swift */; };
+		750DA5E32D074086004EBE5E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750DA5E22D074086004EBE5E /* Protocols.swift */; };
+		750DA5E62D07E6AB004EBE5E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750DA5E52D07E6AB004EBE5E /* DataModel.swift */; };
+		750DA5E82D07EC3A004EBE5E /* CardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750DA5E72D07EC3A004EBE5E /* CardCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		750291CD2D0701E200619C5B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		750291D02D07218100619C5B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		750291D22D0723EA00619C5B /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		750DA5E02D073F7E004EBE5E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Extensions.swift; sourceTree = "<group>"; };
+		750DA5E22D074086004EBE5E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		750DA5E52D07E6AB004EBE5E /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		750DA5E72D07EC3A004EBE5E /* CardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +68,12 @@
 		750291B82D06F1F600619C5B /* Lesson2_7 */ = {
 			isa = PBXGroup;
 			children = (
-				750291CF2D07020700619C5B /* Classes */,
-				750291B92D06F1F600619C5B /* AppDelegate.swift */,
-				750291BB2D06F1F600619C5B /* SceneDelegate.swift */,
+				750DA5E42D07E4F8004EBE5E /* Setup */,
+				750291CF2D07020700619C5B /* Supplementary */,
 				750291BD2D06F1F600619C5B /* ViewController.swift */,
+				750DA5E52D07E6AB004EBE5E /* DataModel.swift */,
 				750291D02D07218100619C5B /* ContentViewController.swift */,
+				750DA5E72D07EC3A004EBE5E /* CardCellView.swift */,
 				750291C22D06F1FE00619C5B /* Assets.xcassets */,
 				750291C42D06F1FE00619C5B /* LaunchScreen.storyboard */,
 				750291C72D06F1FE00619C5B /* Info.plist */,
@@ -72,13 +81,24 @@
 			path = Lesson2_7;
 			sourceTree = "<group>";
 		};
-		750291CF2D07020700619C5B /* Classes */ = {
+		750291CF2D07020700619C5B /* Supplementary */ = {
 			isa = PBXGroup;
 			children = (
+				750DA5E02D073F7E004EBE5E /* Extensions.swift */,
+				750DA5E22D074086004EBE5E /* Protocols.swift */,
 				750291CD2D0701E200619C5B /* ImageView.swift */,
 				750291D22D0723EA00619C5B /* LabelView.swift */,
 			);
-			path = Classes;
+			path = Supplementary;
+			sourceTree = "<group>";
+		};
+		750DA5E42D07E4F8004EBE5E /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				750291B92D06F1F600619C5B /* AppDelegate.swift */,
+				750291BB2D06F1F600619C5B /* SceneDelegate.swift */,
+			);
+			path = Setup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +177,10 @@
 				750291BA2D06F1F600619C5B /* AppDelegate.swift in Sources */,
 				750291BC2D06F1F600619C5B /* SceneDelegate.swift in Sources */,
 				750291D32D0723EA00619C5B /* LabelView.swift in Sources */,
+				750DA5E12D073F7E004EBE5E /* Extensions.swift in Sources */,
+				750DA5E32D074086004EBE5E /* Protocols.swift in Sources */,
+				750DA5E82D07EC3A004EBE5E /* CardCellView.swift in Sources */,
+				750DA5E62D07E6AB004EBE5E /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

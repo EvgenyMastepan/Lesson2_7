@@ -7,44 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
-    private let images: [UIImage] = [UIImage(named: "1_1")!,
-                                     UIImage(named: "1_2")!,
-                                     UIImage(named: "1_3")!]
-
-    lazy var hStack: UIStackView = {
-        $0.axis = .horizontal
-        $0.spacing = 10
-        $0.alignment = .fill
-        $0.distribution = .fillEqually
-        $0.backgroundColor = .systemGray6
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    let tableData = Card.cards
+    
+    lazy var tableView: UITableView = {
+        $0.dataSource = self
+        $0.delegate = self
+        $0.register(CardCellView.self, forCellReuseIdentifier: CardCellView.identifier)
         return $0
-    }(UIStackView())
+    }(UITableView(frame: view.frame, style: .plain))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(hStack)
-        setConstraint()
-        
-        images.forEach {
-            let imageView = customImageView(image: $0)
-            hStack.addArrangedSubview(imageView)
-        }
-
+        view.addSubviews(tableView)
     }
-
-    private func setConstraint() {
-        NSLayoutConstraint.activate([
-            hStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            hStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            hStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            hStack.heightAnchor.constraint(equalToConstant: 100)
-        ])
-    }
-
 }
 
 
