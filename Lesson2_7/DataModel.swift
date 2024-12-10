@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Card {
+struct Card: Identifiable {
+    var id: String = UUID().uuidString
+    
     var titul: String
     var image: String
     var exImage: [String]
