@@ -31,7 +31,7 @@ class ContentViewController: UIViewController, ContentViewControllerProtocol {
     }(UIImageView())
     
     lazy var topText = CustomLabelView(font: .systemFont(ofSize: 24, weight: .black))
-    lazy var exText = CustomLabelView(color: .black, contentMode: .right)
+    lazy var exText = CustomLabelView(color: .black, textAlignment: .right)
     lazy var mainText = CustomLabelView(font: .systemFont(ofSize: 14, weight: .regular), color: .black)
     
     lazy var scrollViewContent: UIView = {
@@ -70,7 +70,7 @@ class ContentViewController: UIViewController, ContentViewControllerProtocol {
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             scrollViewContent.topAnchor.constraint(equalTo: scrollView.topAnchor),

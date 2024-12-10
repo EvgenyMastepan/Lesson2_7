@@ -9,26 +9,23 @@ import UIKit
 
 class CardCellView: UITableViewCell, ControllerProtocol {
     let leftIndent: CGFloat = 15
-    private let images: [UIImage] = [UIImage(named: "1_1")!,
-                                     UIImage(named: "1_2")!,
-                                     UIImage(named: "1_3")!]
+//    private var images: [UIImage] = [UIImage(named: "1_1")!,
+//                                     UIImage(named: "1_2")!,
+//                                     UIImage(named: "1_3")!]
+    var images: [String] = []
     
     static let identifier: String = "CardCellView"
-    
-    
     
     lazy var mainView: UIView = {
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 30
         $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.addSubviews(cardImage, hStack)
+        $0.addSubviews(cardImage, topText, mainText, hStack, cardButton)
         images.forEach {
-            let imageView = customImageView(image: $0)
-//            imageView.translatesAutoresizingMaskIntoConstraints = false
+            let imageView = customImageView(image: UIImage(named: $0))
             hStack.addArrangedSubview(imageView)
         }
-        $0.addSubviews(cardButton)
         return $0
     }(UIView())
     
@@ -39,6 +36,9 @@ class CardCellView: UITableViewCell, ControllerProtocol {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIImageView())
+    
+    lazy var topText = CustomLabelView(font: .systemFont(ofSize: 20, weight: .black), color: .white)
+    lazy var mainText = CustomLabelView(font: .systemFont(ofSize: 14, weight: .regular), color: .white)
     
     lazy var hStack: UIStackView = {
         $0.axis = .horizontal
@@ -67,7 +67,9 @@ class CardCellView: UITableViewCell, ControllerProtocol {
     
     func setupCell(card: Card) {
         cardImage.image = UIImage(named: card.image)
-        
+        images = card.exImage
+        topText.text = card.titul
+        mainText.text = card.maintext
     }
     
     func setupConstraint() {
@@ -81,6 +83,16 @@ class CardCellView: UITableViewCell, ControllerProtocol {
             cardImage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: leftIndent),
             cardImage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -leftIndent),
             cardImage.heightAnchor.constraint(equalToConstant: 180),
+            
+            topText.topAnchor.constraint(equalTo: cardImage.topAnchor, constant: leftIndent),
+            topText.leadingAnchor.constraint(equalTo: cardImage.leadingAnchor, constant: leftIndent),
+            topText.trailingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: leftIndent),
+            topText.heightAnchor.constraint(equalToConstant: 24),
+            
+            mainText.topAnchor.constraint(equalTo: mainText.bottomAnchor, constant: leftIndent),
+            mainText.leadingAnchor.constraint(equalTo: cardImage.leadingAnchor, constant: leftIndent),
+            mainText.trailingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: leftIndent),
+            mainText.bottomAnchor.constraint(equalTo: cardImage.bottomAnchor, constant: -leftIndent),
             
             hStack.topAnchor.constraint(equalTo: cardImage.bottomAnchor, constant: leftIndent),
             hStack.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: leftIndent),
