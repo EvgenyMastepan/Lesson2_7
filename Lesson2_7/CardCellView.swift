@@ -10,7 +10,7 @@ import UIKit
 class CardCellView: UITableViewCell, ControllerProtocol {
     let leftIndent: CGFloat = 15
 
-    //Почему тут не подтягивается из данных?
+
     var images: [String] = ["1_1","1_2","1_3"]
     
     static let identifier: String = "CardCellView"
@@ -66,7 +66,7 @@ class CardCellView: UITableViewCell, ControllerProtocol {
     
     func setupCell(card: Card) {
         cardImage.image = UIImage(named: card.image)
-        // Вот тут же должно заполняться.
+      
         images = card.exImage
         images.forEach {
             let imageView = customImageView(image: UIImage(named: $0))
