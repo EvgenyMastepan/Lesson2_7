@@ -9,10 +9,9 @@ import UIKit
 
 class CardCellView: UITableViewCell, ControllerProtocol {
     let leftIndent: CGFloat = 15
-//    private var images: [UIImage] = [UIImage(named: "1_1")!,
-//                                     UIImage(named: "1_2")!,
-//                                     UIImage(named: "1_3")!]
-    var images: [String] = []
+
+    //Почему тут не подтягивается из данных?
+    var images: [String] = ["1_1","1_2","1_3"]
     
     static let identifier: String = "CardCellView"
     
@@ -22,10 +21,10 @@ class CardCellView: UITableViewCell, ControllerProtocol {
         $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.addSubviews(cardImage, topText, mainText, hStack, cardButton)
-        images.forEach {
-            let imageView = customImageView(image: UIImage(named: $0))
-            hStack.addArrangedSubview(imageView)
-        }
+//        images.forEach {
+//            let imageView = customImageView(image: UIImage(named: $0))
+//            hStack.addArrangedSubview(imageView)
+//        }
         return $0
     }(UIView())
     
@@ -67,7 +66,12 @@ class CardCellView: UITableViewCell, ControllerProtocol {
     
     func setupCell(card: Card) {
         cardImage.image = UIImage(named: card.image)
+        // Вот тут же должно заполняться.
         images = card.exImage
+        images.forEach {
+            let imageView = customImageView(image: UIImage(named: $0))
+            hStack.addArrangedSubview(imageView)
+        }
         topText.text = card.titul
         mainText.text = card.maintext
     }
