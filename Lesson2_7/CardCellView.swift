@@ -93,9 +93,9 @@ class CardCellView: UITableViewCell, ControllerProtocol {
             topText.trailingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: leftIndent),
             topText.heightAnchor.constraint(equalToConstant: 24),
             
-            mainText.topAnchor.constraint(equalTo: mainText.bottomAnchor, constant: leftIndent),
+            mainText.topAnchor.constraint(equalTo: topText.bottomAnchor, constant: leftIndent),
             mainText.leadingAnchor.constraint(equalTo: cardImage.leadingAnchor, constant: leftIndent),
-            mainText.trailingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: leftIndent),
+            mainText.trailingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: -leftIndent),
             mainText.bottomAnchor.constraint(equalTo: cardImage.bottomAnchor, constant: -leftIndent),
             
             hStack.topAnchor.constraint(equalTo: cardImage.bottomAnchor, constant: leftIndent),
